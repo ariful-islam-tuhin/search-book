@@ -5,7 +5,7 @@ const searchBook = () => {
     alert("please enter a book name");
     searchField.value = "";
   } else {
-    const url = `http://openlibrary.org/search.json?q=${searchText}
+    const url = `https://openlibrary.org/search.json?q=${searchText}
     `;
     // console.log(url);
 
