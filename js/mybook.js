@@ -3,16 +3,17 @@ const searchBook = () => {
   const searchText = searchField.value;
   if (isNaN(searchText) === false) {
     alert("please enter a book name");
+    searchField.value = "";
   } else {
-    const url = ` http://openlibrary.org/search.json?q=${searchText}
+    const url = `http://openlibrary.org/search.json?q=${searchText}
     `;
     // console.log(url);
 
     fetch(url)
       .then((res) => res.json())
       .then((data) => displaySearchResult(data));
+    searchField.value = "";
   }
-  searchField.value = "";
 };
 
 // ===========================  display search result  =======================================================
