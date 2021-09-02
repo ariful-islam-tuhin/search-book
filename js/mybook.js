@@ -1,7 +1,6 @@
-const searchFood = () => {
+const searchBook = () => {
   const searchField = document.getElementById("search-field");
   const searchText = searchField.value;
-  // console.log(searchText);
   searchText.value = "";
   const url = ` http://openlibrary.org/search.json?q=${searchText}
   `;
@@ -11,32 +10,33 @@ const searchFood = () => {
     .then((res) => res.json())
     .then((data) => displaySearchResult(data.docs));
 };
-// searchFood();
 
-// ===========================  from data get meals now display korbo  ==========================================================================
+// ===========================  display search result  =======================================================
 
 const displaySearchResult = (books) => {
   // console.log(books);
   const searchResult = document.getElementById("search-result");
+
   books.forEach((book) => {
-    // console.log(book);
     const div = document.createElement("div");
     div.classList.add("col");
-    div.innerHTML = `
-           <div class="card h-100">
+    div.innerHTML = `   
+           <div class="card h-100">        
                <img src="https://covers.openlibrary.org/b/id/${
                  book.cover_i
                }-M.jpg" class="card-img-top" alt="...">
                <div class="card-body">
-                   <h5 class="card-title">${"Name= " + book.title}</h5>
-                    <p class="card-title">${
-                      "Author Name= " + book.author_name[0]
+                   <h5 class="card-title">${book.title}</h5>
+                    <p class="card-title">Author Name: ${
+                      book.author_name ? book.author_name[0] : "not found"
                     }</p>
-                   <p class="card-title">${
-                     "publisher= " + book.publisher[0]
+                   <p class="card-title">publisher: ${
+                     book.publisher ? book.publisher[0] : "not found"
                    }</p>
-                  <p class="card-title">${
-                    "date= " + book.publish_date[0]
+                  <p class="card-title">First Publish Year: ${
+                    book.first_publish_year
+                      ? book.first_publish_year
+                      : "not found"
                   }</p>                  
                   
                </div>
