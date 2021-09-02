@@ -15,32 +15,39 @@
   </head>
 
   <body>
-    <h2 class="text-center text-primary">Search Book</h2>
+    <main class="container">
+      <h2 class="text-center text-primary">Search Book</h2>
 
-    <!-- Book search area -->
-    <div class="input-group mb-3 w-50 mx-auto">
-      <input
-        id="search-field"
-        type="text"
-        class="form-control"
-        placeholder="Search the book you want"
-        aria-label="Recipient's username"
-        aria-describedby="button-addon2"
-      />
-      <button
-        onclick="searchBook()"
-        class="btn btn-outline-primary"
-        type="button"
-        id="button-search"
-      >
-        search
-      </button>
-      <div id="spenner">loding...</div>
+      <!-- Book search area -->
+      <div class="input-group mb-3 w-50 mx-auto">
+        <input
+          id="search-field"
+          type="text"
+          class="form-control"
+          placeholder="Search the book you want"
+          aria-label="Recipient's username"
+          aria-describedby="button-addon2"
+        />
+        <button
+          onclick="searchBook()"
+          class="btn btn-outline-primary"
+          type="button"
+          id="button-search"
+        >
+          search
+        </button>
+      </div>
+      <!-- for showing result -->
+      <section class="text-center">
+        <p id="result"></p>
+      </section>
 
       <!-- Book search result -->
-      <div id="search-result" class="row row-cols-1 row-cols-md-3 g-4"></div>
-    </div>
-
+      <div
+        id="search-result"
+        class="row row-cols-1 row-cols-md-3 g-4 mt-4"
+      ></div>
+    </main>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
