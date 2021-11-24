@@ -16,7 +16,7 @@ const searchBook = () => {
   }
 };
 
-// ===========================  display search result  =======================================================
+// ===========================  display search result  ============================== //
 
 const displaySearchResult = (data) => {
   document.getElementById(
